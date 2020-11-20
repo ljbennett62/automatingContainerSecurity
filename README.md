@@ -142,7 +142,7 @@ Virtual patching protects against vulnerability exploits, embedded malware, zero
 
 ## The Ultimate Cloud Security Pattern - Container Segmentation
 
-Ultimately, to give the business the most flexibility for rapid release and optimal resource utilization, container segmentation must be enforced on each pod and follow application workloads as they scale and move dynamically. In this micro-perimeter vision article, NeuVector CTO Gary Duan outlines a vision for cloud security where the protection perimeter surrounds the workload even as it moves across hybrid clouds.
+Ultimately, to give the business the most flexibility for rapid release and optimal resource utilization, container segmentation must be enforced on each pod and follow application workloads as they scale and move dynamically. In this [micro-perimeter vision article](https://neuvector.com/cloud-security/container-security-micro-perimeters/), NeuVector CTO Gary Duan outlines a vision for cloud security where the protection perimeter surrounds the workload even as it moves across hybrid clouds.
 
 
 # Summary
