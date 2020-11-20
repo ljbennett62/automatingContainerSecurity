@@ -4,25 +4,25 @@
 
 ## Introduction
 
-The blog [Ten Steps to Automate Container Security](https://github.com/IBM/TenStepstoAutomateContainerSecurity-Blog) introduced readers to the reasoning behind why developers should prioritize container security in their CI/CD pipelines.  Developers should be familar with the fact that CI/CD references the combined practices of continuous integration and either continuous delivery or continuous deployment.  It creates a bridge between the role and responsibility of development and operations by enforcing automation in application building, testing and deployment.  A CI/CD pipeline helps to automates your software delivery process. It builds code, runs tests (e.g. the continuous integration), and then safely deploys a new version of your application (e.g. deploy).  Developers should take advantage of automated pipelines because it results in the removal of manual errors, standardized feedback looks and fast product iterations.
+The blog [Ten Steps to Automate Container Security](https://github.com/IBM/TenStepstoAutomateContainerSecurity-Blog) introduced readers to the reasoning behind why developers should prioritize container security in their CI/CD pipelines.  Developers should be familiar with the fact that CI/CD references the combined practices of continuous integration and either continuous delivery or continuous deployment.  It creates a bridge between the role and responsibility of development and operations by enforcing automation in application building, testing and deployment.  A CI/CD pipeline helps to automate the software delivery process. It builds code, runs tests (e.g. the continuous integration), and then safely deploys a new version of your application (e.g. continuous deployment).  Developers should take advantage of automated pipelines because it results in the removal of manual errors, standardized feedback looks and fast product iterations.
 
-You will learn about the integration points that guide a DevOp through container security.  While containers using Kubernetes or Docker are nothing new, not all DevOps may know how to design and build these types of images that ensure container security. The flexibility of containers creates security challenges for developers. If you or your team is ulitizing software containers, you’ll want to learn about automating the process for ensuring best security practices.
+You will learn about the integration points that guide a DevOp through container security.  While containers using Kubernetes or Docker are nothing new, not all DevOps may know how to design and build these type of images that ensure container security. The flexibility of containers creates security challenges for developers. If you or your team is ulitizing software containers, you’ll want to learn about automating the process for ensuring best security practices.
 
-DevOps are rapidly becoming experts on automated CI/CD pipelines and how to manage orchestration tools such as Kubernetes, they they often lack the understanding and experience of security technologies and best practices in production environments required to fend off the constant attacks on the infrastructure and applications.
+While DevOps are rapidly becoming experts on automated CI/CD pipelines and how to manage orchestration tools such as Kubernetes, they often lack the understanding and experience of security technologies and best practices in production environments required to fend off the constant attacks on the infrastructure and applications.
 
 ## Who Should Implement These Steps?
 
 We are taking a simplified view of two important roles when it comes to taking responsibility of the ten steps for automating container security. The two are:
 
-* DevOps (which includes DevSecOps): in addition to having some security responsibilities, this group also executes best practices in production environments to fend off attackes on teh infrastructure and applications
+* **DevOps (which includes DevSecOps)**: in addition to having some security responsibilities, this group also executes best practices in production environments to fend off attacks on the infrastructure and applications
 
-* Security: need to handle the security of modern orchestration tools such as containers and Kubernetes
+* **Security**: need to handle the security of modern orchestration tools such as containers and Kubernetes
 
-You will now learn what the 10 steps are. Know that in general, steps (1-4) are typically handled by DevOps and Compliance teams, while steps (8-10) are the responsiblity of Operations and Security teams.  The middle steps (5-7) are the bridge between the CI/CD pipeline and the production environment with Security Policy as Code and Admission Controls being managed by the DevOps teams with oversight from the Security team.
+You will now learn what the 10 steps are. Know that in general, steps (1-4) are typically handled by DevOps and Compliance teams, while steps (8-10) are the responsibility of Operations and Security teams.  The middle steps (5-7) are the bridge between the CI/CD pipeline and the production environment with Security Policy as Code and Admission Controls being managed by the DevOps teams with oversight from the Security team.
 
 # End-to-End Vulnerability and Compliance Management
 
-End-to-End vulnerability management should follow the Assess, Priorotize, Act and Improve workflow as shown below:
+End-to-End vulnerability management should follow the Assess, Prioritize, Act and Improve workflow as shown below:
 
 <img src="./images/end-to-end-vulnerablity.png" width="100%" height="100%" alt="Component Model"  class="inline"/>
 
@@ -39,7 +39,7 @@ End-to-End vulnerability management should follow the Assess, Priorotize, Act an
 
 * Alerts can be handled similarly to build-phase scans where only critical vulnerabilities with fixes available are sent to developers for remediation. If the image is annotated with the developer name alerting becomes easier and more accurate. While analyzing and alerting should be automated, some manual processes may be required initially until integration is tested and completed.
 
-## Step 3: Run-Time (Production) Scanning & Audting
+## Step 3: Run-Time (Production) Scanning & Auditing
 
 * Auto-scan all running containers, hosts, and orchestrators. Any new containers, scaled up nodes, or updated orchestrator versions should be immediately scanned.
 
@@ -54,7 +54,7 @@ well as certain CIS benchmarks such as containers running as root should be sent
 
 * Correlate vulnerabilities to images, containers, hosts. Assess which production assets are affected by critical vulnerability and compliance issues.
 
-* Implement ‘Virtual Patching’ to mitigate production risks. See Special topics section below for information on 'Virtual Patching'.
+* Implement **Virtual Patching** to mitigate production risks. See [Special topics] section below for information on **Virtual Patching**.
 
 * Alerts on unprotected assets with critical vulnerabilities should be sent to DevOps and security teams. Assets which have virtual patching applied can be downgraded or lowered in priority because they present a lower exploit.
 
@@ -94,7 +94,7 @@ Run-time security starts with admission controls as a gatekeeper for the product
 
 * While creation of these rules can be automated or manual, enforcement and alerting should be automated.
 
-## Step 8: Deploy a Layer8 Container Firewall for Autmated Segmentation and Threat Detection
+## Step 8: Deploy a Layer8 Container Firewall for Automated Segmentation and Threat Detection
 
 * Automate blocking, quarantine, packet capture, and alerting for network attacks and segmentation violations.
 
@@ -137,8 +137,7 @@ Virtual patching protects against vulnerability exploits, embedded malware, zero
 
 ## What is Container Network Segmentation
 
-NeuVector provides a true cloud-native Layer 7 [container firewall](https://neuvector.com/solutions/run-time-container-security/) which does network segmentation automatically. By using behavioral learning, connections and the application protocols used between services are discovered and whitelist rules to isolate them are automatically created. This means that container segmentation is easy and automated, without requiring knowledge of connections beforehand or the manual creation and maintenance of segmentation rules.
-With a cloud-native, Layer 7 container segmentation solution, workloads can be segmented even if they are running on the same host or in the same cluster. This is especially valuable to fulfill industry standard compliance requirements such as PCI DSS.
+[NeuVector](https://neuvector.com/), who builds full lifecycle container security, provides a true cloud-native Layer 7 [container firewall](https://neuvector.com/solutions/run-time-container-security/) which does network segmentation automatically. Layer 7 is the application-level communication layer in the OSI network model. In networking, communication between services happens at multiple layers, ranging from the physical/hardware layer all the way to the application layer. Layer 7 is used as shorthand for the communication layer that is closest to the user. Layer 7 protocols include HTTP, gRPC, and applications-specific protocols such as Redis and Kafka.  Developers can access the service, NeuVector, on the [Red Hat Marketplace](https://marketplace.redhat.com/en-us/products/neuvector-operator). By using behavioral learning, connections and the application protocols used between services are discovered and whitelist rules to isolate them are automatically created. This means that container segmentation is easy and automated, without requiring knowledge of connections beforehand or the manual creation and maintenance of segmentation rules.  With a cloud-native, Layer 7 container segmentation solution, workloads can be segmented even if they are running on the same host or in the same cluster. This is especially valuable to fulfill industry standard compliance requirements such as PCI DSS.
 
 
 ## The Ultimate Cloud Security Pattern - Container Segmentation
@@ -148,7 +147,9 @@ Ultimately, to give the business the most flexibility for rapid release and opti
 
 # Summary
 
-Ultimately, to give the business the most flexibility for rapid release and optimal resource utilization, container segmentation must be enforced on each pod and follow application workloads as they scale and move dynamically. In this [micro-perimeter vision article](https://neuvector.com/cloud-security/container-security-micro-perimeters/), NeuVector CTO Gary Duan outlines a vision for cloud security where the protection perimeter surrounds the workload even as it moves across hybrid clouds.
+## Take the Steps now to Automate Security
+
+The road to a fully automated pipeline with integrated security controls all the way into production starts with a few easy first steps. Which of the ten steps in this document you start with depends on where you are in the process of automating your pipeline. What is most important is to get started with what can be done easily and what is most critical at this time, then create a roadmap to fully automated security. For example, build-phase and registry scanning is fairly easy to automate and delivers good value in return. Automated run-time security responses such as alerting, blocking, quarantine and packet capture are also easy to enable. In contrast, requiring Security Policy as Code can be more complicated, from both a technical creation and workflow testing perspective as well as a human process perspective. To be successful, DevOps and Security teams need to agree on roles, responsibilities, pipeline processes, and the role that developers play in deploying security policy as code. The good news is that implementing even a small subset of the steps outlined in this guide will improve pipeline automation and move organizations towards the goal of pipeline automation with security integration.
 
 
 
